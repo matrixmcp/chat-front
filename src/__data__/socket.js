@@ -2,7 +2,7 @@ import openSocket from 'socket.io-client';
 
 let socket;
 if (process.env.NODE_ENV === 'production'){
-   socket = openSocket('https://my-chat1.herokuapp.com:5000');
+   socket = openSocket('https://api-my-chat1.herokuapp.com:5000');
 }
 else {
     socket = openSocket('http://localhost:5000');
