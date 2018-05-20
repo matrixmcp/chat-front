@@ -2,7 +2,7 @@ import openSocket from 'socket.io-client';
 import { API_ROOT } from '../__data__/constatnts'
 
 let socket;
-socket = openSocket(`${API_ROOT}:5000`);
+socket = openSocket(`${API_ROOT}`);
 
 
 
