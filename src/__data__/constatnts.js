@@ -5,8 +5,8 @@ export const STATUSES = {
 }
 
 export const API_ROOT = process.env.NODE_ENV === 'production' 
-    ? 'https://api-my-chat1.herokuapp.com:5000'
-    :'http://localhost:5000'
+    ? 'https://api-my-chat1.herokuapp.com'
+    : 'http://localhost'
 
 export const FORMATS_DATETIME = {
     FULL: 'DD/MM/YYYY HH:mm:ss',
