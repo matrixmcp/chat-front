@@ -1,0 +1,15 @@
+.InputMessage {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(195, 245, 138);
+    padding: 25px 0px 25px 15px;
+    width: inherit;
+}
+
+.Contacts {
+    margin-top: 70px;
+    padding: 20px;
+    background-color: rgb(231, 245, 210);
+    position: fixed;
+    width: 30%;
+}

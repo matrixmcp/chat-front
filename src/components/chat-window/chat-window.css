@@ -1,0 +1,11 @@
+.containerChat {
+    margin-top: 70px;
+    max-height: 100%;
+}
+
+.userName {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(252, 183, 94);
+    margin-left: 15px;
+}

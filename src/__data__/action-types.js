@@ -1,0 +1,8 @@
+export const INIT_MESSAGES = 'INIT_MESSAGES'
+export const ADD_MESSAGE = 'ADD_MESSAGE'
+
+export const INIT_CONTACTS = 'INIT_CONTACTS'
+
+export const SET_STATUS = 'SET_STATUS'
+
+export const SET_CURRENT_USER = 'SET_CURRENT_USER'
