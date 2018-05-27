@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './contacts.css'
 import { ListGroup, ListGroupItem, Row, Col, Image } from 'react-bootstrap'
-import logo from '../../logo.svg'
+import logo from '../../images/logo.svg'
 
 export const Contacts = (props) =>(
     <div className={props.className}>

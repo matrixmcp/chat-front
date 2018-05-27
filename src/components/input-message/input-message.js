@@ -15,6 +15,7 @@ export class InputMessage extends React.Component {
         this.state = { value: '' }
 
     }
+    
     handleClickButtonSend = () => {
         const text = this.state.value
         const datetime = new Date()

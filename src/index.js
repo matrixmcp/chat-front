@@ -7,7 +7,6 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { store } from './__data__/store'
 
 ReactDOM.render(
@@ -18,4 +17,3 @@ ReactDOM.render(
             </Switch>
         </Router>
     </Provider>, document.getElementById('root'))
-registerServiceWorker()
