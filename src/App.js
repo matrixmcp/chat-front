@@ -7,15 +7,20 @@ import style from './App.css'
 
 import { subscribeToMessage } from './__data__/socket'
 import { ChatWindow, Contacts, InputMessage } from './components'
-import { fetchMessages, fetchContacts, addMessage } from './__data__/actions'
+import { fetchMessages, fetchContacts, fetchCurrentUser, addMessage } from './__data__/actions'
 
 const mapDispatchToProps = (dispatch) => ({ 
   fetchMessages: bindActionCreators (fetchMessages, dispatch),
   fetchContacts: bindActionCreators (fetchContacts, dispatch),
+  fetchCurrentUser: bindActionCreators (fetchCurrentUser, dispatch),
   addMessage: bindActionCreators(addMessage, dispatch)
 })
 
-const mapStateToProps = (state) => ({ messages: state.messages, contacts: state.contacts })
+const mapStateToProps = (state) => ({ 
+    messages: state.messages,
+    contacts: state.contacts,
+    currentUser: state.currentUser
+})
 
 class App extends React.Component {
     constructor (props){
@@ -26,10 +31,12 @@ class App extends React.Component {
     componentDidMount () {
         this.props.fetchMessages()
         this.props.fetchContacts()
+        this.props.fetchCurrentUser()
     }
 
     render() {
-    
+        const { currentUser, messages, contacts } = this.props
+
       return (
         <Grid>
             <Row>
@@ -55,7 +62,7 @@ class App extends React.Component {
                         </Nav>
                         <Nav pullRight>
                             <NavItem eventKey={1} href="#">
-                                Login
+                               { currentUser.auth ? 'Logout' : 'Login' }
                             </NavItem>
                         </Nav>
                     </Navbar.Collapse>
@@ -63,16 +70,16 @@ class App extends React.Component {
             </Row>
             <Row className="show-grid">
                 <Col md={4}>
-                    <Contacts contacts={this.props.contacts} className={style.contacts}/>
+                    <Contacts contacts={contacts} className={style.contacts}/>
                 </Col>
                 <Col md={8}>
-                    <ChatWindow messages={this.props.messages}/>  
+                    <ChatWindow messages={messages}/>  
                 </Col>
             </Row>
             <Row>
                 <Col md={4} />
                 <Col md={8}>
-                    <InputMessage className={style.inputMessage}/>
+                    <InputMessage className={style.inputMessage} user={currentUser}/>
                 </Col>
             </Row>
         </Grid>

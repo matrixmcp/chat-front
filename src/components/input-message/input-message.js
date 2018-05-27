@@ -1,14 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Button, Col, FormControl, Row } from 'react-bootstrap'
 
 import { sendToMessage } from '../../__data__/socket'
 import style from './input-message'
 
-const user = {
-    name: "Ivan"
-}
-
 export class InputMessage extends React.Component {
+    static propTypes = {
+        user: PropTypes.object,
+    }
+
+    static defaultProps = {
+        user: {},
+    }
 
     constructor (props) {
         super(props)
@@ -17,6 +21,7 @@ export class InputMessage extends React.Component {
     }
     
     handleClickButtonSend = () => {
+        const { user } = this.props
         const text = this.state.value
         const datetime = new Date()
         sendToMessage(user.name, text, datetime)
