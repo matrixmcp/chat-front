@@ -4,10 +4,10 @@ import { ListGroup, ListGroupItem, Col, Row, Label } from 'react-bootstrap'
 import moment from 'moment'
 import { FORMATS_DATETIME } from '../../__data__/constatnts'
 
-import './chat-window.css'
+import style from './chat-window.css'
 
 export const ChatWindow = (props) => (
-    <div className="containerChat">
+    <div className={style.container}>
         <Row>
             <Col md={12}>
                 <ListGroup>
@@ -17,7 +17,7 @@ export const ChatWindow = (props) => (
                                 <ListGroupItem href="#link" key={index}>
                                     <Row>
                                         <Col>
-                                            <Label bsClass="userName">{item.name}</Label>
+                                            <Label bsClass={style.userName}>{item.name}</Label>
                                         </Col>
                                     </Row>
                                     <Row>

@@ -1,4 +1,4 @@
-.InputMessage {
+.input-message {
     position: fixed;
     bottom: 0;
     background-color: rgb(195, 245, 138);
@@ -6,7 +6,7 @@
     width: inherit;
 }
 
-.Contacts {
+.contacts {
     margin-top: 70px;
     padding: 20px;
     background-color: rgb(231, 245, 210);

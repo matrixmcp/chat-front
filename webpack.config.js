@@ -25,10 +25,27 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
+                exclude: /bootstrap/,
                 use: [
                     { loader: 'style-loader', options: { sourceMap: true } },
-                    { loader: 'css-loader', options: { sourceMap: true } },
+                    { loader: 
+                        'css-loader',
+                        options: { 
+                            sourceMap: true,
+                            localIdentName: '[path]__[name]__[local]--[hash:base64:5]',
+                            modules: true,
+                            camelCase: true
+                        }
+                    },
                     { loader: 'sass-loader', options: { sourceMap: true } }
+                ]
+            },
+            {
+                test: /\.css$/,
+                include: /bootstrap/,
+                use: [ 
+                    'style-loader',
+                    'css-loader' 
                 ]
             },
             {

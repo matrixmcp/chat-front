@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Col, FormControl, Row } from 'react-bootstrap'
 
 import { sendToMessage } from '../../__data__/socket'
-import './input-message'
+import style from './input-message'
 
 const user = {
     name: "Ivan"
