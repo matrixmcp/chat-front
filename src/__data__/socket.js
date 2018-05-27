@@ -4,8 +4,6 @@ import { API_ROOT } from '../__data__/constatnts'
 let socket;
 socket = openSocket(`${API_ROOT}`);
 
-
-
 export function subscribeToMessage(cb) {
     socket.on('message', message => cb(null, message));
 }
