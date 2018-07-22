@@ -1,15 +1,20 @@
-.input-message {
-    position: fixed;
-    bottom: 0;
-    background-color: rgb(195, 245, 138);
-    padding: 25px 0px 25px 15px;
-    width: inherit;
+.container {
+    display: flex;
+    padding: 0 5%;
 }
 
-.contacts {
-    margin-top: 70px;
-    padding: 20px;
-    background-color: rgb(231, 245, 210);
-    position: fixed;
+.contacts-wrapper {
     width: 30%;
+    background-color: rgb(172, 207, 207);
+    padding: 10px;
+}
+
+.chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 20px;
+    background-color: rgb(172, 207, 207);
+    height: 100vh;
+    justify-content: flex-end;
 }

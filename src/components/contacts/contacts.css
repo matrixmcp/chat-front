@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(92, 185, 185);
+}
+
+.item:hover {
+    background-color: rgb(172, 207, 207);
+    cursor: pointer;
+}
+
+.avatar {
+    width: 24px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 24px;
+    color: white;
+}

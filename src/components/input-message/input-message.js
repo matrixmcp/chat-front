@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Col, FormControl, Row } from 'react-bootstrap'
+import { Button, Col, FormControl } from 'react-bootstrap'
 
 import { sendToMessage } from '../../__data__/socket'
-import style from './input-message'
+import style from './input-message.css'
 
 export class InputMessage extends React.Component {
     static propTypes = {
@@ -40,23 +40,18 @@ export class InputMessage extends React.Component {
 
     render(){
         return (
-            <div className={this.props.className}>
-                <Row>
-                    <Col md={8}>
-                        <FormControl
-                            type="text"
-                            placeholder="Введите сообщение..."
-                            onChange={this.handleChangeInput}
-                            value={this.state.value}
-                            onKeyDown={this.handlePushKeyEnter}
-                        />
-                    </Col>
-                    <Col md={4}>
-                        <Button bsStyle="primary" bsSize="sm" onClick={this.handleClickButtonSend}>
-                            SEND MESSAGE
-                        </Button>
-                    </Col>
-                </Row>
+            <div className={style.container}>
+                    <input
+                        className={style.input}
+                        type="text"
+                        placeholder="Введите сообщение..."
+                        onChange={this.handleChangeInput}
+                        value={this.state.value}
+                        onKeyDown={this.handlePushKeyEnter}
+                    />
+                    <Button className={style.button} onClick={this.handleClickButtonSend}>
+                        SEND MESSAGE
+                    </Button>
             </div>
         )
     }
