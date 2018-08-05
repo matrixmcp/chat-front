@@ -1,20 +1,22 @@
 .container {
+    height: 100vh;
     display: flex;
     padding: 0 5%;
 }
 
 .contacts-wrapper {
     width: 30%;
-    background-color: rgb(172, 207, 207);
+    background-color: rgb(75, 157, 189);
     padding: 10px;
+    margin-top: 40px;
 }
 
-.chat-wrapper {
+.messages-wrapper {
     display: flex;
+    margin-top: 40px;
     flex-direction: column;
     flex-grow: 1;
     margin-left: 20px;
     background-color: rgb(172, 207, 207);
-    height: 100vh;
     justify-content: flex-end;
 }

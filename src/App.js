@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import style from './app.css'
 
 import { subscribeToMessage } from './__data__/socket'
-import { ChatWindow, Contacts, InputMessage } from './components'
+import { ChatWindow, Contacts, InputMessage, NavBar } from './components'
 import { fetchMessages, fetchContacts, fetchCurrentUser, addMessage } from './__data__/actions'
 
 const mapDispatchToProps = (dispatch) => ({ 
@@ -38,13 +38,14 @@ class App extends React.Component {
 
       return (
         <div className={style.container}>
-                <div className={style.contactsWrapper}>
-                    <Contacts contacts={contacts} />
-                </div>
-                <div className={style.chatWrapper}>
-                    <ChatWindow messages={messages}/>  
-                    <InputMessage className={style.inputMessage} user={currentUser}/>
-                </div>
+            <NavBar auth={currentUser.auth}/>
+            <div className={style.contactsWrapper}>
+                <Contacts contacts={contacts} />
+            </div>
+            <div className={style.messagesWrapper}>
+                <ChatWindow messages={messages}/>  
+                <InputMessage className={style.inputMessage} user={currentUser}/>
+            </div>
         </div>
       );
     }
