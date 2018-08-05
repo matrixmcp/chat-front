@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup, ListGroupItem, Row, Col, Image } from 'react-bootstrap'
 
 import style from './contacts.css'
 import logo from '../../images/logo.svg'

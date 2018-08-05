@@ -11,13 +11,13 @@ export const ChatWindow = (props) => (
             props.messages.map((item, index) => (
                     <div className={style.item} key={index}>
                         <span className={style.username}>
-                            {item.name}
+                            {item.userName}
                         </span>
                         <span className={style.text}>
                             {item.text}
                         </span>
                         <span className={style.date}>
-                            {moment(item.datetime).format(FORMATS_DATETIME.FULL)}
+                            {moment(item.createdDate).format(FORMATS_DATETIME.FULL)}
                         </span>
                     </div>
                 )

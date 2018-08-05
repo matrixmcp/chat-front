@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Col, FormControl } from 'react-bootstrap'
 
 import { sendToMessage } from '../../__data__/socket'
 import style from './input-message.css'
@@ -23,8 +22,7 @@ export class InputMessage extends React.Component {
     handleClickButtonSend = () => {
         const { user } = this.props
         const text = this.state.value
-        const datetime = new Date()
-        sendToMessage(user.name, text, datetime)
+        sendToMessage(user.name, text)
         this.setState({ value: '' })
     }
 
@@ -49,9 +47,9 @@ export class InputMessage extends React.Component {
                         value={this.state.value}
                         onKeyDown={this.handlePushKeyEnter}
                     />
-                    <Button className={style.button} onClick={this.handleClickButtonSend}>
+                    <button className={style.button} onClick={this.handleClickButtonSend}>
                         SEND MESSAGE
-                    </Button>
+                    </button>
             </div>
         )
     }

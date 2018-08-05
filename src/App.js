@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 
 import style from './app.css'
 
-import { subscribeToMessage } from './__data__/socket'
+import { subscribeToMessage, subscribeToMessagesHistory } from './__data__/socket'
 import { ChatWindow, Contacts, InputMessage, NavBar } from './components'
-import { fetchMessages, fetchContacts, fetchCurrentUser, addMessage } from './__data__/actions'
+import { initMessages, fetchContacts, fetchCurrentUser, addMessage } from './__data__/actions'
 
 const mapDispatchToProps = (dispatch) => ({ 
-  fetchMessages: bindActionCreators (fetchMessages, dispatch),
+  initMessages: bindActionCreators (initMessages, dispatch),
   fetchContacts: bindActionCreators (fetchContacts, dispatch),
   fetchCurrentUser: bindActionCreators (fetchCurrentUser, dispatch),
   addMessage: bindActionCreators(addMessage, dispatch)
@@ -25,10 +25,10 @@ class App extends React.Component {
     constructor (props){
         super(props)
         subscribeToMessage((err, message) => this.props.addMessage(message))
+        subscribeToMessagesHistory((err, messages) => this.props.initMessages(messages))
     }
 
     componentDidMount () {
-        this.props.fetchMessages()
         this.props.fetchContacts()
         this.props.fetchCurrentUser()
     }
