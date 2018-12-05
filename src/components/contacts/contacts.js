@@ -10,7 +10,7 @@ export const Contacts = (props) =>(
             props.contacts.map((item, index)=>{
                 return (
                     <div className={style.item} key={index}>
-                        <image className={style.avatar} src={logo} />
+                        <img className={style.avatar} src={logo} />
                         <span className={style.username}>{item.username}</span>
                     </div>
                     
