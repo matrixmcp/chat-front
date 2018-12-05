@@ -39,12 +39,14 @@ class App extends React.Component {
       return (
         <div className={style.container}>
             <NavBar auth={currentUser.auth}/>
-            <div className={style.contactsWrapper}>
+           <div className={style.contentWrapper}>
+               <div className={style.contactsWrapper}>
                 <Contacts contacts={contacts} />
             </div>
             <div className={style.messagesWrapper}>
                 <ChatWindow messages={messages}/>  
                 <InputMessage className={style.inputMessage} user={currentUser}/>
+            </div>
             </div>
         </div>
       );

@@ -13,8 +13,8 @@ export const Contacts = (props) =>(
                         <image className={style.avatar} src={logo} />
                         <span className={style.username}>{item.username}</span>
                     </div>
+                    
                 )
-                
             })
         }
     </div>

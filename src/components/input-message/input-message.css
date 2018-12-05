@@ -1,10 +1,14 @@
 @import '../../styles/variables.css';
 .container {
-    background-color: #75cef1;
+    background-color:#4CAFAF;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
     min-width: 400px;
+    border-radius: 10px;
 }
 
 .input {
